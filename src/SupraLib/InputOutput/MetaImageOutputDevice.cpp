@@ -60,12 +60,14 @@ namespace supra
 		, m_writeMockData(false)
 		, m_mockDataFilename("")
 	{
+		uint32_t uint32max = std::numeric_limits<uint32_t>::max();
+		
 		m_callFrequency.setName("MHD");
 
 		m_valueRangeDictionary.set<string>("filename", "output", "Filename");
 		m_valueRangeDictionary.set<bool>("createSequences", { false, true }, true, "Sequences");
 		m_valueRangeDictionary.set<bool>("active", { false, true }, true, "Active");
-		m_valueRangeDictionary.set<uint32_t>("maxElements", 1, std::numeric_limits<uint32_t>::max(), 10000, "Maximum elements");
+		m_valueRangeDictionary.set<uint32_t>("maxElements", 1, uint32max, 10000, "Maximum elements");
 		m_valueRangeDictionary.set<bool>("writeMockData", { false, true }, false, "(Write mock)");
 		m_valueRangeDictionary.set<string>("mockDataFilename", "", "(Mock meta filename)");
 
